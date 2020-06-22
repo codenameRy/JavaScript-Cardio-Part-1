@@ -118,14 +118,18 @@ function maxCharacter(str) {
   let maxNum = 0;
   let maxChar = '';
 
+  //Loop through string as an array
   str.split('').forEach(function(char) {
-    if(charMap[char]) {
+    // if it has been found
+    if(charMap[char]) { 
       charMap[char]++;
+    //if it has not been found
     } else {
       charMap[char] = 1;
     }
   });
 
+//for in loop for object, instead of an array
   for(let char in charMap) {
     // debugger;
     if(charMap[char] > maxNum) {
@@ -160,36 +164,36 @@ console.log('The maximum character appearing in javascript is ' + ' " ' + maxCha
 
 //Solution 1
 
-// function fizzBuzz() {
-//   for(let i = 1; i <= 100; i++) {
-//     if(i % 3 && i % 5 === 0) {
-//       console.log('FizzBuzz');
-//     } else if(i % 3 === 0) {
-//       console.log('Fizz');
-//     } else if(i % 5 === 0) {
-//       console.log('Buzz');
-//     } else {
-//       console.log(i);
-//     }
-//   }
-// }
-
-// console.log(fizzBuzz())
-
 function fizzBuzz() {
-  for (let i = 1; i <= 100; i++) {
-    let output = '';
-    if (i % 3 === 0) {
-      output += 'Fizz';
+  for(let i = 1; i <= 100; i++) {
+    if(i % 3 === 0 && i % 5 === 0) {
+      console.log('FizzBuzz');
+    } else if(i % 3 === 0) {
+      console.log('Fizz');
+    } else if(i % 5 === 0) {
+      console.log('Buzz');
+    } else {
+      console.log(i);
     }
-    if (i % 5 === 0) {
-      output += 'Buzz';
-    }
-    if (output === '') {
-      output = i;
-    }
-    console.log(output);
   }
 }
 
-fizzBuzz()
+console.log(fizzBuzz())
+
+// function fizzBuzz() {
+//   for (let i = 1; i <= 100; i++) {
+//     let output = '';
+//     if (i % 3 === 0) {
+//       output += 'Fizz';
+//     }
+//     if (i % 5 === 0) {
+//       output += 'Buzz';
+//     }
+//     if (output === '') {
+//       output = i;
+//     }
+//     console.log(output);
+//   }
+// }
+
+// fizzBuzz()
