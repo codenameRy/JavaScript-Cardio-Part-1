@@ -18,7 +18,7 @@ function reverseString2(str) {
 console.log('Reverse of giraffe is ' + reverseString2("giraffe"))
 console.log('Reverse of skylight is ' + reverseString2( "skylight"))
 
-//Solution 3 for loop decrementing
+//Solution 3 for loop incrementing
 function reverseString3(str) {
   let revString = [];
   for(let i = 0; i <= str.length - 1; i++) {
@@ -42,6 +42,18 @@ console.log('Reverse of starbucks is '+ reverseString3( "starbucks"))
   console.log('Reverse of peace is ' + reverseString4("peace"))
   console.log('Reverse of travel is ' + reverseString4("travel"))
 
+  //Solution 5 - Decrementing for loop
+  function reverseString5(str) {
+    let revStr = '';
+    for(let i = str.length - 1; i >= 0; i--) {
+      revStr = revStr + str[i]
+    }
+    return revStr
+  }
+
+   console.log('Reverse of laugh is ' + reverseString5("laugh"))
+  console.log('Reverse of lola is ' + reverseString5("lola"))
+
 // CHALLENGE 2: VALIDATE A PALINDROME
 // Return true if palindrome and false if not
 // ex. isPalindrome('racecar') === 'true', isPalindrome('hello') == false
@@ -59,6 +71,15 @@ console.log(
 console.log(
   'Is hello a palindrome? ' + isPalindrome("hello")
 )
+
+var isPalindrome = function(x) {
+   var regex = /[\W_]/g;
+  var lowRegStr = x.toLowerCase().replace(regex, '');
+  var reverseStr = lowRegStr.split('').reverse().join(''); 
+  return reverseStr === lowRegStr;
+};
+
+console.log()
 
 // CHALLENGE 3: REVERSE AN INTEGER
 // Return an integer in reverse
